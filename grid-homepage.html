@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<meta charset="utf-8">
+		<title>Grid: Homepage Example</title>
+		<style>
+			html, body {
+				box-sizing: border-box;
+				height: 100%;
+				margin: 0px;
+				background-color: #4f999e;
+				font-family: Avenir;
+				color: #ffeead;
+			}
+			.heading {
+				text-align: center;
+				font-size: 22px;
+				padding: 20px;
+			}
+			.container > div {
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    font-size: 1.5em;
+			    color: #ffeead;
+			}
+			.container > div:nth-child(n) {
+			    background-color: #175059;
+			}
+			.container {
+				height: 100%;
+				display: grid;
+				grid-gap: 1px;
+				grid-template-columns: [main-start] 1fr [content-start] 5fr [content-end main-end];
+				grid-template-rows: [main-start] 40px [content-start] auto [content-end] 40px [main-end];
+			}
+			.header {
+				grid-column: main;
+			}
+			.menu {
+			}
+			.content {
+				grid-area: content;
+			}
+			.footer {
+				grid-column: main;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="heading">
+			Grid: Homepage Example
+		</div>
+		<div class="container">
+            <div class="header">HEADER</div>
+            <div class="menu">MENU</div>
+            <div class="content">CONTENT</div>
+            <div class="footer">FOOTER</div>
+        </div>
+	</body>
+</html>
